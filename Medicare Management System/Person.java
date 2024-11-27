@@ -1,5 +1,5 @@
-//Person class with Attributes to be Inherited
-public class Person {
+//Person Class
+public abstract class Person {
     protected String name;
     protected int age;
 
@@ -24,8 +24,6 @@ public class Person {
         this.age = age;
     }
 
-    public void showPersonDetails() {
-        System.out.println("Name: " + name);
-        System.out.println("Age: " + age);
-    }
+    //Abstract method that subclasses must implement
+    public abstract void showPersonDetails();
 }
