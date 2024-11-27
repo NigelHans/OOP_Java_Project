@@ -1,5 +1,5 @@
-// Medicine class to show the medication
-class Medicine {
+//Medicine class to show the medication
+public class Medicine {
     private String name;
     private String dosage;
 
@@ -10,6 +10,6 @@ class Medicine {
 
     @Override
     public String toString() {
-        return "Medicine: " + name + ", Dosage: " + dosage;
+        return "Medicine: " + name + " (" + dosage + ")";
     }
 }
