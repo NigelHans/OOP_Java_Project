@@ -1,9 +1,9 @@
-//Doctor clas
+// Doctor class
 public class Doctor extends Person {
     private String specialty;
 
     public Doctor(String name, int age, String specialty) {
-        super(name, age);  //Calls the constructor of the Person class
+        super(name, age);
         this.specialty = specialty;
     }
 
@@ -17,7 +17,8 @@ public class Doctor extends Person {
 
     @Override
     public void showPersonDetails() {
-        super.showPersonDetails(); //Calls the method from Person
+        System.out.println("Name: " + name);
+        System.out.println("Age: " + age);
         System.out.println("Specialty: " + specialty);
     }
 }
