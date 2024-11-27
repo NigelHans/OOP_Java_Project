@@ -5,7 +5,6 @@ A comprehensive digital platform designed to streamline user registration, login
 
 📋 Objective
 
-
 To develop a digital system that securely manages user accounts and healthcare data, fostering seamless interactions between patients and doctors while ensuring efficient record-keeping and prescription management.
 
 
