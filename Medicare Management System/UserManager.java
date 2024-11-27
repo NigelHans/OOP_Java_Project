@@ -3,7 +3,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-
 // UserManager class to handle user operations
 public class UserManager {
     private static final String USER_FILE_PATH = "users.txt"; // File to save users info
@@ -302,18 +301,55 @@ public class UserManager {
         System.out.print("Enter the patient's name to update: ");
         String patientName = scanner.nextLine();
         Patient patient = findPatientByName(patientName);
-        
+    
         if (patient != null) {
             System.out.print("Enter new age: ");
             int newAge = scanner.nextInt();
             scanner.nextLine();
             patient.setAge(newAge);
+    
             System.out.print("Enter new health condition: ");
             String newCondition = scanner.nextLine();
             patient.setHealthCondition(newCondition);
+    
+            updatePatientPrescriptions(scanner, patient); // New method to update prescriptions
+    
+            saveAllPatients(); // Save updated patient list
             System.out.println("Patient details updated successfully!");
         } else {
             System.out.println("Patient not found.");
+        }
+    }
+
+    private static void updatePatientPrescriptions(Scanner scanner, Patient patient) {
+        System.out.println("\nCurrent Prescriptions:");
+        if (patient.getPrescriptions().isEmpty()) {
+            System.out.println("No prescriptions found.");
+        } else {
+            for (Medicine medicine : patient.getPrescriptions()) {
+                System.out.println("- " + medicine);
+            }
+        }
+    
+        System.out.println("\nDo you want to update prescriptions? (yes/no): ");
+        String choice = scanner.nextLine().trim().toLowerCase();
+    
+        if (choice.equals("yes")) {
+            patient.clearPrescriptions(); // Clear existing prescriptions
+    
+            boolean adding = true;
+            while (adding) {
+                System.out.print("Enter medicine name: ");
+                String medicineName = scanner.nextLine();
+                System.out.print("Enter dosage: ");
+                String dosage = scanner.nextLine();
+    
+                Medicine newMedicine = new Medicine(medicineName, dosage);
+                patient.prescribeMedicine(newMedicine);
+    
+                System.out.print("Add another prescription? (yes/no): ");
+                adding = scanner.nextLine().trim().equalsIgnoreCase("yes");
+            }
         }
     }
 
@@ -366,10 +402,24 @@ public class UserManager {
                 System.out.print("Enter new health condition: ");
                 String newCondition = scanner.nextLine();
                 patient.setHealthCondition(newCondition);
+    
+                saveAllPatients(); // Save updated list to the file
                 System.out.println("Your details updated successfully!");
                 return;
             }
         }
         System.out.println("Patient details not found.");
+    }
+
+    private static void saveAllPatients() {
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(PATIENT_FILE_PATH))) {
+            for (Patient patient : patients) {
+                writer.write(patient.getName() + "," + patient.getAge() + "," + patient.getHealthCondition());
+                writer.newLine();
+            }
+            System.out.println("All patient data saved successfully.");
+        } catch (IOException e) {
+            System.out.println("Error saving patient data: " + e.getMessage());
+        }
     }
 }
