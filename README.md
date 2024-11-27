@@ -10,17 +10,21 @@ To develop a digital system that securely manages user accounts and healthcare d
 🔑 User Management
   ⧠ Role-based Access: Supports registration and login for two user types: Doctors and Patients.
   ⧠ Secure Credentials: Usernames and passwords are securely stored, ensuring data privacy.
+
 👨‍⚕️ Doctor Module
   ⧠ Register and log in as a doctor.
   ⧠ Add, view, and update patient information.
   ⧠ Prescribe medicines and manage patient health details.
+
 👩‍⚕️ Patient Module
   ⧠ Register and log in as a patient.
   ⧠ View and update personal details and health conditions.
   ⧠ Access prescribed medicines and health updates.
+
 💾 Data Storage
   ⧠ Data persistence is ensured using external text files (users.txt and patients.txt).
   ⧠ Dynamic management of patient health data and prescriptions.
+
 
 🛠️ Core Classes
 Class	Description
