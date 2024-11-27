@@ -7,7 +7,7 @@ public class Patient extends Person {
     private List<Medicine> prescriptions;
 
     public Patient(String name, int age, String healthCondition) {
-        super(name, age);  //Calls the constructor of the parent class (Person)
+        super(name, age);
         this.healthCondition = healthCondition;
         this.prescriptions = new ArrayList<>();
     }
@@ -24,9 +24,18 @@ public class Patient extends Person {
         prescriptions.add(medicine);
     }
 
+    public void clearPrescriptions() {
+        prescriptions.clear();
+    }
+    
+    public List<Medicine> getPrescriptions() {
+        return prescriptions;
+    }
+
     @Override
     public void showPersonDetails() {
-        super.showPersonDetails();  //Calls the method from Person
+        System.out.println("Name: " + name);
+        System.out.println("Age: " + age);
         System.out.println("Health Condition: " + healthCondition);
         System.out.println("Prescriptions: " + prescriptions);
     }
