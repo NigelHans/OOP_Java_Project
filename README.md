@@ -18,7 +18,6 @@ To develop a digital system that securely manages user accounts and healthcare d
 👨‍⚕️ Doctor Module
 
   ⧠ Register and log in as a doctor.
-
   ⧠ Add, view, and update patient information.
 
   ⧠ Prescribe medicines and manage patient health details.
