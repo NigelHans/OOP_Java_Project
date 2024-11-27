@@ -117,8 +117,10 @@ SDG 9: Industry, Innovation, and Infrastructure
 
   ② Login: Access the system using secure credentials.
 
-  ③ Manage Data:
+  ③ Manage Data
+
     ⧠ Doctors: Add and update patient records, prescribe medicines.
+
     ⧠ Patients: View and update personal health details and prescriptions.
 
 
