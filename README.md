@@ -4,21 +4,31 @@
 A comprehensive digital platform designed to streamline user registration, login, and healthcare data management for patients and doctors, facilitating improved healthcare services and communication.
 
 📋 Objective
+
 To develop a digital system that securely manages user accounts and healthcare data, fostering seamless interactions between patients and doctors while ensuring efficient record-keeping and prescription management.
 
 ✨ Key Features
+
 🔑 User Management
+
   ⧠ Role-based Access: Supports registration and login for two user types: Doctors and Patients.
+
   ⧠ Secure Credentials: Usernames and passwords are securely stored, ensuring data privacy.
 
 👨‍⚕️ Doctor Module
+
   ⧠ Register and log in as a doctor.
+
   ⧠ Add, view, and update patient information.
+
   ⧠ Prescribe medicines and manage patient health details.
 
 👩‍⚕️ Patient Module
+
   ⧠ Register and log in as a patient.
+
   ⧠ View and update personal details and health conditions.
+
   ⧠ Access prescribed medicines and health updates.
 
 💾 Data Storage
